@@ -44,6 +44,11 @@ public class LoopMain2 {
             if (com3 == user1 || com3 == user2) ball++;
 
             System.out.println(strike + " 스트라이크, " + ball + " 볼");
+            
+            if(strike == 3) {
+            	System.out.println("정답입니다.");
+            	break;
+            }
 
         }
     }
