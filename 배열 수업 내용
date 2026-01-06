@@ -1,0 +1,206 @@
+package javastudy260106;
+
+import javax.crypto.spec.ChaCha20ParameterSpec;
+
+public class ArrayMain {
+	public static void main(String[] args) {
+		
+		/*
+		 * 배열 : 동일한 데이터 타입의 저장공간이 연속적으로 나열되어있는 구조
+		 * 	정적배열 : 데이터 저장공간 조정 불가
+		 * 	동적배열 : 데이터 저장공간 조정 가능
+		 * 
+		 */
+		
+		//----------------------------------------------------------------------
+		
+		/*
+		int[] arr = new int[5];
+		// 배열을 명명하는 변수는(ex, arr1)는 참조변수라고 함, 메모리 주소를 저장하고 있음
+		// 배열의 위치는 참조변수가 기준임으로 0에서부터 시작함, 위치를 부르는 변수 arr[0]의 [0]을 인덱스라고 함
+		
+		arr[0] = 10;
+		arr[1] = 20;
+		arr[2] = 55;
+		arr[3] = 11;
+		arr[4] = 99;
+		
+		
+		 * 배열은 크기가 정해져있어서 for 반복문 사용
+		 * 인덱스 직접 사용이 가능해서 데이터 수정 및 저장 가능
+		 * arr.length = arr 배열의 크기
+		
+		for(int i = 0; i < arr.length; i++) {
+			System.out.println(arr[i]);
+		}
+		
+		*/
+		
+		//----------------------------------------------------------------------
+		
+		/*
+		 * 배열 전용 for 반복문 (= 향상된 for 반복문)
+		 * 배열을 간접적으로 이용하기 때문에 데이터 수정 및 저장 불가
+		 * 저장되어있는 데이터를 사용하기 때문에 주로 이 반복문을 사용함
+		
+		for(int num : arr){
+			System.out.println(num);
+		}
+		
+		*/
+		
+		//----------------------------------------------------------------------
+		
+		/*
+		char[] temp = new char[5];
+		
+		temp[0] = 'g';
+		temp[1] = 'o';
+		temp[2] = 'o';
+		temp[3] = 'd';
+
+		System.out.println(temp);
+		*/
+		
+		//or
+		
+		/*
+		// String 단축형태
+		String a = "good";
+		
+		// String 기본형태
+		String aa = new String("member");
+		System.out.println(aa+"  "+a);
+		*/
+		
+		//----------------------------------------------------------------------
+		
+		/*
+		String word ="i like banana";
+		System.out.println(word);
+		System.out.println(word.charAt(4));
+		//인덱스를 이용하여 4번 배열에 있는 문자 출력
+		
+		System.out.println(word.indexOf('b'));
+		//인덱스를 이용하여 'b'라는 문자가 몇번째 배열에 있는지 출력
+		
+		System.out.println(word.substring(2));
+		//인덱스를 이용하여 문자열 잘라내기
+		*/
+		
+		//----------------------------------------------------------------------
+		
+		/*
+		String name = "이순신-김유신-김춘추-이성계-박문수-박팽년";
+		System.out.println(name);
+		
+		String[] names = name.split("-");
+		// split : 입력한 문자열의 기준으로 나누고 저장
+		// 문자열을 배열로 저장 (단, 규칙이 있어야 함)
+	
+		// 아래와 같이 저장되는 것과 같음
+		// String[] names = {"이순신", "김유신", "김춘추", "이성계", "박문수", "박팽년" }
+		
+		System.out.println(names);
+		System.out.println(names[0]);
+		*/
+		
+		//----------------------------------------------------------------------
+		
+		/*
+		//예시 1
+		//반복문으로 이름을 전부 출력하세요. (한 줄에 하나씩)
+		
+		String name = "이순신-김유신-김춘추-이성계-박문수-박팽년";
+		String[] names = name.split("-");
+		
+		for(String names2 : names){
+			System.out.println(names2);
+		}
+		*/
+		
+		//----------------------------------------------------------------------
+		
+		/*
+		//예시 2
+		//김씨를 가진 사람만 출력
+		
+		String name = "이순신-김유신-김춘추-이성계-박문수-박팽년";
+		String[] names = name.split("-");
+		
+		for(String names2 : names){
+			if(names2.charAt(0) == '김') {
+			System.out.println(names2);
+			}
+		}
+		*/
+		
+		//----------------------------------------------------------------------
+		
+		/*
+		//예시 3
+		//이름에 "신"이라는 글자가 들어간 사람 출력
+		
+		String name = "이순신-김유신-김춘추-이성계-박문수-박팽년";
+	      String[] names = name.split("-");
+	      
+	      for(String names2 : names){
+	         if(names2.indexOf('신') != -1) {
+	        	 //배열에 없는 경우 -1로 표기됨
+	            System.out.println(names2);
+	         }
+	      }
+	      */
+		
+	    //----------------------------------------------------------------------
+	      
+		/*
+	     // 문제 1번
+	     // fruits 배열에서 과일 이름이 3자 이상인 것만 출력하시오.
+		 // lengt() 사용
+	      
+		String[] fruits = {"사과","딸기","배","수박","바나나","복숭아","파인애플","아보카도"};
+
+		for(String fruit : fruits) 
+			if(fruit.length() >= 3) {
+				System.out.println(fruit);
+			}
+		*/
+		
+		 //----------------------------------------------------------------------
+		
+		
+		/*
+
+		// 문제 2번
+		// fruits 배열에서 딸기와 수박은 제외하고 출력하시오.
+		
+		String[] fruits = {"사과","딸기","배","수박","바나나","복숭아","파인애플","아보카도"};
+		for(String fruit : fruits) 
+			if(! fruit.equals("딸기") && ! fruit.equals("수박")) {
+				System.out.println(fruit);
+			}
+			*/
+
+
+		//----------------------------------------------------------------------
+		
+		// 과일을 한 줄에 4개씩 세줄로 출력
+		// 인덱스 활용
+		String[] fruits = {"사과","딸기","배","수박","바나나","복숭아","파인애플",
+							"아보카도","오렌지","감","한라봉","망고"};
+		
+		System.out.println("\n\n\n");
+				
+		for(int i = 0; i < fruits.length; i++) {
+			if(i % 4 == 0 ) {
+				System.out.println();
+			}
+				System.out.print(fruits[i]+" ");
+			
+		}
+		
+		}
+
+	}
+
